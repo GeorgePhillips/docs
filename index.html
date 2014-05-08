@@ -43,7 +43,7 @@ layout: container
 								{% if url != doc.url %}{% continue %}{% endif %}
 								
 								<tr>
-									<td><a href="{{ doc.url }}">{{ doc.method }} {{ doc.resource }}</a></td>
+									<td><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.method }} {{ doc.resource }}</a></td>
 									<td>{{ doc.summary }}</td>
 								</tr>
 							{% endfor %}

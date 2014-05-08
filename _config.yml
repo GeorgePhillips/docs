@@ -3,6 +3,8 @@ version: v1
 endpoint: https://api.iwantmyname.com
 summary: Manage your domain names programmatically with the iwantmyname REST API.
 
+baseurl: "/docs"
+
 collections:
   resources:
     output: yes
