@@ -2,9 +2,30 @@
 layout: base
 ---
 
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<a href="{{ site.baseurl }}/" class="navbar-brand">iwantmyname API</a>
+
+		<ul class="nav navbar-nav">
+			<li class="dropdown">
+				<a href="{{ site.baseurl }}/" class="dropdown-toggle" data-toggle="dropdown">Docs <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					{% for group in site.data.groups %}
+						<li><a href="{{ site.baseurl }}/#{{ group.name }}">{{ group.name }}</a></li>
+					{% endfor %}
+				</ul>
+			</li>
+		</ul>
+		<p class="navbar-text navbar-right">
+			{% if page.resource %}
+				{{ page.method }} {{ page.resource }}
+			{% else %}
+				Manage your domain names and DNS records programmatically with our RESTful API.
+			{% endif %}
+		</p>
+	</div>
+</nav>
+
 <div class="container">
 	{{ content }}
-
-	<hr>
-	<p><strong>{{ site.name }}</strong> <span class="text-muted">{{ site.version }}</span></p>
 </div>

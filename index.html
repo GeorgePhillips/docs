@@ -2,55 +2,35 @@
 layout: container
 ---
 
-<div class="jumbotron">
-	<h1>{{ site.name }} <small>{{ site.version }}</small></h1>
-	<p>{{ site.summary }}</p>
-</div>
-
-<div class="row">
-	<div class="col-xs-3">
-		<div class="list-group">
-			{% for group in site.data.groups %}
-				<a class="list-group-item" href="#{{ group.name }}">
-					{{ group.name }}
-				</a>
-			{% endfor %}
-		</div>
-	</div>
-
-	<div class="col-xs-9">
-		<h4>API Endpoint</h4>
-		<p>
-			<input class="form-control input-lg" type="text" value="{{ site.endpoint }}/&hellip;" readonly>
-		</p>
-
-		{% for group in site.data.groups %}
-			<section id="{{ group.name }}">
-				<hr>
-				<h3>{{ group.name }}</h3>
-				<p class="text-muted">{{ group.summary }}</p>
-				
-				<table class="table table-condensed">
-					<thead>
+{% for group in site.data.groups %}
+	<section id="{{ group.name }}">
+		<h2>{{ group.name }}</h2>
+		<p class="text-muted">{{ group.summary }}</p>
+		
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<th class="col-xs-4">Resource</th>
+					<th>Summary</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for url in group.resources %}
+					{% for doc in site.resources %}
+						{% if url != doc.url %}{% continue %}{% endif %}
+						
 						<tr>
-							<th style="width: 40%">Resource</th>
-							<th>Summary</th>
+							<td>
+								<a href="{{ site.baseurl }}{{ doc.url }}">
+									<span class="method">{{ doc.method }}</span>
+									{{ doc.resource }}
+								</a>
+							</td>
+							<td>{{ doc.summary }}</td>
 						</tr>
-					</thead>
-					<tbody>
-						{% for url in group.resources %}
-							{% for doc in site.resources %}
-								{% if url != doc.url %}{% continue %}{% endif %}
-								
-								<tr>
-									<td><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.method }} {{ doc.resource }}</a></td>
-									<td>{{ doc.summary }}</td>
-								</tr>
-							{% endfor %}
-						{% endfor %}
-					</tbody>
-				</table>
-			</section>
-		{% endfor %}
-	</div>
-</div>
+					{% endfor %}
+				{% endfor %}
+			</tbody>
+		</table>
+	</section>
+{% endfor %}
