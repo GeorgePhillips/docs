@@ -2,8 +2,34 @@
 layout: container
 ---
 
-<ul>
-	{% for doc in site.resources %}
-		<li><a href="{{ doc.url }}">{{ doc.method }} {{ doc.resource }}</a></li>
-	{% endfor %}
-</ul>
+<div class="jumbotron">
+	<h1>{{ site.name }} <small>{{ site.version }}</small></h1>
+	<p>{{ site.summary }}</p>
+</div>
+
+<div class="row">
+	<div class="col-xs-3">
+		<div class="list-group">
+			{% for group in site.data.groups %}
+				<a class="list-group-item" href="#{{ group.name }}">
+					{{ group.name }}
+				</a>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="col-xs-9">
+		<h4>API Endpoint</h4>
+		<p>
+			<input class="form-control input-lg" type="text" value="{{ site.endpoint }}/&hellip;" readonly>
+		</p>
+
+		{% for group in site.data.groups %}
+			<section id="{{ group.name }}">
+				<hr>
+				<h3>{{ group.name }}</h3>
+				<p class="text-muted">{{ group.summary }}</p>
+			</section>
+		{% endfor %}
+	</div>
+</div>

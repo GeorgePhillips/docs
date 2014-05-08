@@ -1,0 +1,29 @@
+- name: Domains
+  summary: Interact with domain names managed by your account.
+
+- name: Domain Transfers
+  summary: Manage your incoming and outgoing domain transfers.
+
+- name: Domain Contacts
+  summary: Manage contact information associated with a domain name.
+
+- name: DNS Records
+  summary: |
+    Manage your domain's DNS records. For these DNS records to be effective,
+    your domain must be using our nameservers. Keep in mind that DNS changes
+    will be applied immediately, but may not be immediately active due to DNS
+    propagation. Please allow a few hours for the changes to take effect.
+
+- name: Apps & Services
+  summary: |
+    Interact with our apps and services marketplace. DNS propagation,
+    as mentioned above, applies here too.
+
+- name: Account
+  summary: Manage your account profile and settings.
+
+- name: Billing & Invoices
+  summary: Manage your account's billing information and retrieve invoices.
+
+- name: Domain Search
+  summary: gTLD and ccTLD availability and special requirements.
