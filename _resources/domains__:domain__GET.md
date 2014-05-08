@@ -4,6 +4,7 @@ permalink: /GET/domains/:domain/
 
 method: GET
 resource: /domains/:domain
+summary: Get all information associated with the domain.
 ---
 
 # Request
@@ -17,4 +18,3 @@ resource: /domains/:domain
 ~~~
 200
 ~~~
-

@@ -4,6 +4,7 @@ permalink: /GET/domains/
 
 method: GET
 resource: /domains
+summary: List all registered domain names.
 ---
 
 # Request

@@ -1,11 +1,29 @@
 - name: Domains
   summary: Interact with domain names managed by your account.
+  resources:
+  - /GET/domains/
+  - /POST/domains/
+  - /GET/domains/:domain/
+  - /PATCH/domains/:domain/
+  - /GET/domains/:domain/nameservers/
+  - /PUT/domains/:domain/nameservers/
 
 - name: Domain Transfers
   summary: Manage your incoming and outgoing domain transfers.
+  resources:
+  - /GET/transfers/
+  - /POST/transfers/
+  - /PUT/transfers/:domain/
 
 - name: Domain Contacts
   summary: Manage contact information associated with a domain name.
+  resources:
+  - /GET/domains/:domain/contacts/
+  - /PUT/domains/:domain/contacts/
+  - /PATCH/domains/:domain/contacts/
+  - /GET/domains/:domain/contacts/:type/
+  - /PUT/domains/:domain/contacts/:type/
+  - /PATCH/domains/:domain/contacts/:type/
 
 - name: DNS Records
   summary: |
@@ -13,17 +31,44 @@
     your domain must be using our nameservers. Keep in mind that DNS changes
     will be applied immediately, but may not be immediately active due to DNS
     propagation. Please allow a few hours for the changes to take effect.
+  resources:
+  - /GET/domains/:domain/records/
+  - /POST/domains/:domain/records/
+  - /PUT/domains/:domain/records/
+  - /DELETE/domains/:domain/records/:id/
 
 - name: Apps & Services
   summary: |
     Interact with our apps and services marketplace. DNS propagation,
     as mentioned above, applies here too.
+  resources:
+  - /GET/apps/
+  - /GET/domains/:domain/apps/
+  - /POST/domains/:domain/apps/
 
 - name: Account
   summary: Manage your account profile and settings.
+  resources:
+  - /GET/account/
+  - /PATCH/account/
+  - /GET/account/default_contact/
+  - /PUT/account/default_contact/
+  - /PATCH/account/default_contact/
+  - /GET/account/default_nameservers/
+  - /PUT/account/default_nameservers/
 
-- name: Billing & Invoices
-  summary: Manage your account's billing information and retrieve invoices.
+- name: Billing & Receipts
+  summary: Manage your account's billing information and retrieve receipts.
+  resources:
+  - /GET/account/billing/
+  - /PUT/account/billing/
+  - /GET/account/receipts/
+  - /GET/account/receipts/:id/
+  - /GET/account/receipts/:id/download/
 
 - name: Domain Search
   summary: gTLD and ccTLD availability and special requirements.
+  resources:
+  - /GET/tlds/
+  - /GET/tlds/:tld/
+  - /GET/search/
