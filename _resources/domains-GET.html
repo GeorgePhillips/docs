@@ -7,4 +7,76 @@ resource: /domains
 summary: List all registered domain names.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% capture http %}
+GET {{ page.resource }}
+Host: {{ site.endpoint }}
+Accept: application/json
+{% endcapture %}
+
+{% capture curl %}
+curl -X {{ page.method }} \
+  {{ site.endpoint }}{{ page.resource }}
+{% endcapture %}
+
+{% include request.html http=http curl=curl %}
+
+
+{% capture response %}
+[
+  {
+    "domain": "börsentrend.com",
+    "domain_ascii": "xn--brsentrend-ecb.com",
+    "status": "active",
+    "created": "1994-11-05T13:15:30Z",
+    "updated": "1994-11-05T13:15:30Z",
+    "expires": "1994-11-05T13:15:30Z",
+    "auto_renew": true,
+    "auth_code": "mHS0B929ej",
+    "transfer_lock": true,
+    "contacts": {
+      "owner": {
+        "first_name": "Clark",
+        "last_name": "Kent",
+        "country": "US",
+        ...
+      }
+    },
+    "whois_masking": true,
+    "nameservers": [
+      "ns1.dnsimple.com",
+      "ns2.dnsimple.com",
+      "ns3.dnsimple.com",
+      "ns4.dnsimple.com"
+    ],
+    "apps": [
+      {
+        "app": "tumblr",
+        "name": "Tumblr"
+      },
+      {
+        "app": "forwarding",
+        "name": "Web Forwarding",
+        "forwarding": {
+          "twitter.%domain%": "https://twitter.com/mytwitter"
+        }
+      }
+    ],
+    "records": [
+      {
+        "type": "A",
+        "name": "",
+        "value": "66.6.44.4"
+      },
+      {
+        "type": "CNAME",
+        "name": "www",
+        "value": "domains.tumblr.com",
+        "app": "forwarding"
+      }
+    ]
+  },
+  ...
+]
+{% endcapture %}
+
+{% include response.html response=response %}
