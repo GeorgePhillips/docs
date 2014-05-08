@@ -1,0 +1,28 @@
+{% assign active = include.curl || include.http %}
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<ul class="nav nav-pills">
+			{% if include.http %}
+				<li{% if include.http == active %} class="active"{% endif %}><a href="#http-request" data-toggle="tab">HTTP</a></li>
+			{% endif %}
+			{% if include.curl %}
+				<li{% if include.curl == active %} class="active"{% endif %}><a href="#curl-request" data-toggle="tab">cURL</a></li>
+			{% endif %}
+		</ul>
+	</div>
+	<div class="panel-body">
+		<div class="tab-content">
+			{% if include.http %}
+				<div class="tab-pane{% if include.http == active %} active{% endif %}" id="http-request">
+					<samp>{{ include.http | newline_to_br }}</samp>
+				</div>
+			{% endif %}
+			{% if include.curl %}
+			<div class="tab-pane{% if include.curl == active %} active{% endif %}" id="curl-request">
+				<samp>{{ include.curl | newline_to_br }}</samp>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
