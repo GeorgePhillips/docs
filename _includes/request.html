@@ -16,12 +16,12 @@
 		<div class="tab-content">
 			{% if include.http %}
 				<div class="tab-pane{% if include.http == active %} active{% endif %}" id="http-request">
-					<samp>{{ include.http }}</samp>
+					<samp>{{ include.http | trim }}</samp>
 				</div>
 			{% endif %}
 			{% if include.curl %}
 			<div class="tab-pane{% if include.curl == active %} active{% endif %}" id="curl-request">
-				<samp>{{ include.curl }}</samp>
+				<samp>{{ include.curl | trim }}</samp>
 			</div>
 			{% endif %}
 		</div>
