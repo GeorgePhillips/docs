@@ -18,7 +18,6 @@ layout: container
 				{% for url in group.resources %}
 					{% for doc in site.resources %}
 						{% if url != doc.url %}{% continue %}{% endif %}
-						
 						<tr>
 							<td>
 								<a href="{{ site.baseurl }}{{ doc.url }}">
