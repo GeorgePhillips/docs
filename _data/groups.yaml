@@ -7,6 +7,7 @@
   - /PATCH/domains/:domain/
   - /GET/domains/:domain/nameservers/
   - /PUT/domains/:domain/nameservers/
+  - /GET/domains/:domain/pending/
 
 - name: Domain Transfers
   summary: Manage your incoming and outgoing domain transfers.
