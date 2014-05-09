@@ -24,58 +24,26 @@ curl -X {{ page.method }} \
 {% capture response %}
 [
   {
-    "domain": "börsentrend.com",
-    "domain_ascii": "xn--brsentrend-ecb.com",
+    "domain": "xn--brsentrend-ecb.com",
+    "domain_utf8": "börsentrend.com",
     "status": "active",
+
     "created": "1994-11-05T13:15:30Z",
-    "updated": "1994-11-05T13:15:30Z",
-    "expires": "1994-11-05T13:15:30Z",
+    "updated": "1995-11-05T13:15:30Z",
+    "expires": "1997-11-05T13:15:30Z",
+    "renews": "1997-10-05T13:15:30Z",
     "auto_renew": true,
-    "auth_code": "mHS0B929ej",
+
     "transfer_lock": true,
-    "contacts": {
-      "owner": {
-        "first_name": "Clark",
-        "last_name": "Kent",
-        "country": "US",
-        ...
-      }
-    },
-    "whois_masking": true,
-    "nameservers": [
-      "ns1.dnsimple.com",
-      "ns2.dnsimple.com",
-      "ns3.dnsimple.com",
-      "ns4.dnsimple.com"
-    ],
-    "apps": [
-      {
-        "app": "tumblr",
-        "name": "Tumblr"
-      },
-      {
-        "app": "forwarding",
-        "name": "Web Forwarding",
-        "forwarding": {
-          "twitter.%domain%": "https://twitter.com/mytwitter"
-        }
-      }
-    ],
-    "records": [
-      {
-        "type": "A",
-        "name": "",
-        "value": "66.6.44.4"
-      },
-      {
-        "type": "CNAME",
-        "name": "www",
-        "value": "domains.tumblr.com",
-        "app": "forwarding"
-      }
-    ]
-  },
-  ...
+    "transfer_code": "mHS0B929ej",
+
+    <a href="./:domain/contacts">"contacts": {...}</a>,
+    "contacts_masked": true,
+
+    <a href="./:domain/nameservers">"nameservers": [...]</a>,
+    <a href="./:domain/apps">"apps": [...]</a>,
+    <a href="./:domain/records">"records": [...]</a>
+  }
 ]
 {% endcapture %}
 
