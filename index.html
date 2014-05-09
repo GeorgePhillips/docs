@@ -4,8 +4,8 @@ layout: container
 
 {% for group in site.data.groups %}
 	<section id="{{ group.name }}">
-		<h2>{{ group.name }}</h2>
-		<p class="text-muted">{{ group.summary }}</p>
+		<h1 id="{{ group.name }}">{{ group.name }}</h1>
+		<p class="lead text-muted">{{ group.summary }}</p>
 		
 		<table class="table table-condensed">
 			<thead>
