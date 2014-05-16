@@ -2,7 +2,6 @@
   summary: Interact with domain names managed by your account.
   resources:
   - /GET/domains/
-  - /POST/domains/
   - /GET/domains/:domain/
   - /PATCH/domains/:domain/
   - /GET/domains/:domain/nameservers/
@@ -13,7 +12,6 @@
   summary: Manage your incoming and outgoing domain transfers.
   resources:
   - /GET/transfers/
-  - /POST/transfers/
   - /PUT/transfers/:domain/
 
 - name: Domain Contacts
@@ -62,7 +60,8 @@
   summary: Manage your account's billing information and retrieve receipts.
   resources:
   - /GET/account/billing/
-  - /PUT/account/billing/
+  - /POST/account/billing/
+  - /DELETE/account/billing/:id/
   - /GET/account/receipts/
   - /GET/account/receipts/:id/
   - /GET/account/receipts/:id/download/
