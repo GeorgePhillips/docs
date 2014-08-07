@@ -1,4 +1,19 @@
-{% assign active = include.curl || include.http %}
+{% capture http %}
+{{ page.method }} {{ page.resource }}
+Host: {{ site.endpoint }}
+Accept: application/json{% if include.payload %}
+Content-Type: application/json
+
+{{ include.payload | trim }}
+{% endif %}
+{% endcapture %}
+
+{% capture curl %}
+curl -X {{ page.method }} \{% if include.payload %}
+  -H 'Content-Type: application/json' \
+  -d '<span class="text-nowrap">{{ include.payload | strip_newlines | replace: "'", "\'" }}</span>' \{% endif %}
+  {{ site.endpoint }}{{ page.resource }}
+{% endcapture %}
 
 <div class="panel panel-default">
 	<div class="panel-heading">
@@ -6,24 +21,24 @@
 	</div>
 	<div class="panel-body">
 		<ul class="nav nav-tabs">
-			{% if include.http %}
-				<li{% if include.http == active %} class="active"{% endif %}><a href="#http-request" data-toggle="tab">HTTP</a></li>
-			{% endif %}
-			{% if include.curl %}
-				<li{% if include.curl == active %} class="active"{% endif %}><a href="#curl-request" data-toggle="tab">cURL</a></li>
-			{% endif %}
+			<li><a href="#http-request" data-toggle="tab">HTTP</a></li>
+			<li class="active"><a href="#curl-request" data-toggle="tab">cURL</a></li>
 		</ul>
 		<div class="tab-content">
-			{% if include.http %}
-				<div class="tab-pane{% if include.http == active %} active{% endif %}" id="http-request">
+			<div class="tab-pane" id="http-request">
+				{% if include.http %}
 					<samp>{{ include.http | trim }}</samp>
-				</div>
-			{% endif %}
-			{% if include.curl %}
-			<div class="tab-pane{% if include.curl == active %} active{% endif %}" id="curl-request">
-				<samp>{{ include.curl | trim }}</samp>
+				{% else %}
+					<samp>{{ http | trim }}</samp>
+				{% endif %}
 			</div>
-			{% endif %}
+			<div class="tab-pane active" id="curl-request">
+				{% if include.curl %}
+					<samp>{{ include.curl | trim }}</samp>
+				{% else %}
+					<samp>{{ curl | trim }}</samp>
+				{% endif %}
+			</div>
 		</div>
 	</div>
 </div>

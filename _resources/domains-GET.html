@@ -7,18 +7,7 @@ resource: /domains
 summary: List all registered domain names.
 ---
 
-{% capture http %}
-GET {{ page.resource }}
-Host: {{ site.endpoint }}
-Accept: application/json
-{% endcapture %}
-
-{% capture curl %}
-curl -X {{ page.method }} \
-  {{ site.endpoint }}{{ page.resource }}
-{% endcapture %}
-
-{% include request.html http=http curl=curl %}
+{% include request.html %}
 
 
 {% capture response %}

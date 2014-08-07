@@ -7,4 +7,13 @@ resource: /domains/:domain
 summary: Update specific editable details for the domain.
 ---
 
+{% capture payload %}
+{
+  "auto_renew": false,
+  "transfer_lock": false
+}
+{% endcapture %}
+
+{% include request.html payload=payload %}
+
 <em class="text-muted">Not yet documented.</em>
