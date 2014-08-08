@@ -27,16 +27,16 @@ curl -X {{ page.method }} \{% if include.payload %}
 		<div class="tab-content">
 			<div class="tab-pane" id="http-request">
 				{% if include.http %}
-					<samp>{{ include.http | trim }}</samp>
+					<samp class="lang-http">{{ include.http | trim }}</samp>
 				{% else %}
-					<samp>{{ http | trim }}</samp>
+					<samp class="lang-http">{{ http | trim }}</samp>
 				{% endif %}
 			</div>
 			<div class="tab-pane active" id="curl-request">
 				{% if include.curl %}
-					<samp>{{ include.curl | trim }}</samp>
+					<samp class="lang-bash">{{ include.curl | trim }}</samp>
 				{% else %}
-					<samp>{{ curl | trim }}</samp>
+					<samp class="lang-bash">{{ curl | trim }}</samp>
 				{% endif %}
 			</div>
 		</div>
