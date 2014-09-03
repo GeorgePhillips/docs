@@ -7,4 +7,28 @@ resource: /transfers
 summary: List all pending incoming and outgoing domain transfers.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% include request.html %}
+
+
+{% capture response %}
+[
+  {
+    "type": "incoming",
+    "domain": "example.com",
+    "domain_utf8": "example.com",
+    "status": "pending",
+    "transfer_code": "abcdef123456",
+    "created_at": "{{ site.time | date_to_xmlschema }}",
+    "updated_at": "{{ site.time | date_to_xmlschema }}",
+    "log": [
+      {
+        "timestamp": "{{ site.time | date_to_xmlschema }}",
+        "status": "initiated",
+        "message": "Transfer confirmation email sent to registrant@example.com"
+      }
+    ]
+  }
+]
+{% endcapture %}
+
+{% include response.html response=response %}
