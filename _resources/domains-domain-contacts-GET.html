@@ -7,4 +7,16 @@ resource: /domains/:domain/contacts
 summary: List all contacts (owner, admin, tech, billing) associated with the domain.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% include request.html %}
+
+
+{% capture response %}
+{
+  <a href="./:type/">"owner": {...}</a>,
+  <a href="./:type/">"admin": {...}</a>,
+  <a href="./:type/">"tech": {...}</a>,
+  <a href="./:type/">"billing": {...}</a>,
+}
+{% endcapture %}
+
+{% include response.html response=response %}
