@@ -7,4 +7,16 @@ resource: /domains/:domain/contacts
 summary: Replace contact information for all contact types at the same time.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% capture payload %}
+{
+  <a href="./:type/">"owner": {...}</a>,
+  <a href="./:type/">"admin": {...}</a>,
+  <a href="./:type/">"tech": {...}</a>,
+  <a href="./:type/">"billing": {...}</a>
+}
+{% endcapture %}
+
+{% include request.html payload=payload %}
+
+
+{% include response.html status=202 %}

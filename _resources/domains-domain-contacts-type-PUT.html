@@ -7,4 +7,24 @@ resource: /domains/:domain/contacts/:type
 summary: Replace contact information for a specific contact type.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% capture payload %}
+{
+  "first_name": "Mary",
+  "last_name": "Smith",
+  "company": "Acme, Inc.",
+
+  "country": "US",
+  "street": "4321 Main St. Suite A",
+  "city": "Beverly Hills",
+  "state": "CA",
+  "postcode": "90210",
+
+  "phone": "+1.8005559999",
+  "email": "m.smith@example.com"
+}
+{% endcapture %}
+
+{% include request.html payload=payload %}
+
+
+{% include response.html status=202 %}
