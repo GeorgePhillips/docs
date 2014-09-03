@@ -7,4 +7,13 @@ resource: /transfers/:domain
 summary: Restart the domain's pending transfer using a new authorization code.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% capture payload %}
+{
+  "transfer_code": "a1B2cd34"
+}
+{% endcapture %}
+
+{% include request.html payload=payload %}
+
+
+{% include response.html status=202 %}
