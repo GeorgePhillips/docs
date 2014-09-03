@@ -4,7 +4,18 @@ permalink: /PUT/domains/:domain/nameservers/
 
 method: PUT
 resource: /domains/:domain/nameservers
-summary: Replace domain's nameservers with a new ordered list of nameservers.
+summary: Replace domain's nameservers with a new list of nameservers.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% capture payload %}
+[
+  "ns1.wordpress.com",
+  "ns2.wordpress.com",
+  "ns3.wordpress.com"
+}
+{% endcapture %}
+
+{% include request.html payload=payload %}
+
+
+{% include response.html status=202 %}
