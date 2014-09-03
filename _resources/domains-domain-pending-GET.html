@@ -7,4 +7,29 @@ resource: /domains/:domain/pending
 summary: List all updates initiated on the domain that are still pending at the registry.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% include request.html %}
+
+
+{% capture response %}
+[
+  {
+    "submitted_at": "{{ site.time | date_to_xmlschema }}",
+    "payload": {
+      "auto_renew": false,
+      "transfer_lock": false
+    }
+  },
+  {
+    "submitted_at": "{{ site.time | date_to_xmlschema }}",
+    "payload": {
+      "nameservers": [
+        "ns1.wordpress.com",
+        "ns2.wordpress.com",
+        "ns3.wordpress.com"
+      ]
+    }
+  }
+]
+{% endcapture %}
+
+{% include response.html response=response %}
