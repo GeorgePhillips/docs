@@ -7,4 +7,13 @@ resource: /domains/:domain/contacts/:type
 summary: Update specific contact information for a specific contact type.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% capture payload %}
+{
+  "company": "MetaCortex"
+}
+{% endcapture %}
+
+{% include request.html payload=payload %}
+
+
+{% include response.html status=202 %}
