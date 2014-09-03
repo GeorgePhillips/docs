@@ -7,4 +7,33 @@ resource: /domains/:domain
 summary: Get all information associated with the domain.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% include request.html %}
+
+
+{% capture response %}
+{
+  "domain": "xn--brsentrend-ecb.com",
+  "domain_utf8": "börsentrend.com",
+  "status": "active",
+
+  "created": "1994-11-05T13:15:30Z",
+  "updated": "1995-11-05T13:15:30Z",
+  "expires": "1997-11-05T13:15:30Z",
+  "renews": "1997-10-05T13:15:30Z",
+  "auto_renew": true,
+
+  "transfer_lock": true,
+  "transfer_code": "mHS0B929ej",
+
+  <a href="./contacts/">"contacts": {...}</a>,
+  "contacts_masked": true,
+
+  <a href="./nameservers/">"nameservers": [...]</a>,
+  <a href="./apps/">"apps": [...]</a>,
+  <a href="./records/">"records": [...]</a>,
+
+  <a href="./pending/">"pending": [...]</a>
+}
+{% endcapture %}
+
+{% include response.html response=response %}
