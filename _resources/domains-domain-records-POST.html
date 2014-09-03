@@ -7,4 +7,24 @@ resource: /domains/:domain/records
 summary: Add a DNS record to the domain.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% capture payload %}
+{
+  "name": "docs",
+  "type": "CNAME",
+  "value": "example.github.io"
+}
+{% endcapture %}
+
+{% include request.html payload=payload %}
+
+
+{% capture response %}
+{
+  "id": "4BF54AA1197CEDE329FB7E974D9B2",
+  "name": "docs",
+  "type": "CNAME",
+  "value": "example.github.io"
+}
+{% endcapture %}
+
+{% include response.html status=201 response=response %}

@@ -7,4 +7,39 @@ resource: /domains/:domain/records
 summary: Replace all DNS records for a domain with a new set of records. This is effectively DELETE on each exisiting record and POST for each new record.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% capture payload %}
+[
+  {
+    "name": "www",
+    "type": "CNAME",
+    "value": "example.github.io"
+  },
+  {
+    "name": "",
+    "type": "A",
+    "value": "174.129.25.170"
+  }
+]
+{% endcapture %}
+
+{% include request.html payload=payload %}
+
+
+{% capture response %}
+[
+  {
+    "id": "94866FE33AAABC483579F81822F79",
+    "name": "www",
+    "type": "CNAME",
+    "value": "example.github.io"
+  },
+  {
+    "id": "F53313AD434F8B7746BB9F2F8D3F6",
+    "name": "",
+    "type": "A",
+    "value": "174.129.25.170"
+  }
+]
+{% endcapture %}
+
+{% include response.html status=200 response=response %}
