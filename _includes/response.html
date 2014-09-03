@@ -1,8 +1,28 @@
+{% capture headers %}
+HTTP/1.1 200 OK{% if include.response %}
+Content-Type: application/json{% endif %}
+{% endcapture %}
+
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<h3 class="panel-title">Response</h3>
 	</div>
 	<div class="panel-body">
-		<samp class="lang-json">{{ include.response | trim }}</samp>
+		<ul class="nav nav-tabs">
+			<li><a href="#response-headers" data-toggle="tab">Headers</a></li>
+			<li class="active"><a href="#response-body" data-toggle="tab">Body</a></li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane" id="response-headers">
+				<samp class="lang-http">{{ headers | trim }}</samp>
+			</div>
+			<div class="tab-pane active" id="response-body">
+				{% if include.response %}
+					<samp class="lang-json">{{ include.response | trim }}</samp>
+				{% else %}
+					<em class="text-muted">No body.</em>
+				{% endif %}
+			</div>
+		</div>
 	</div>
 </div>

@@ -187,7 +187,9 @@
 	<script>
 		var nodes = document.querySelectorAll('samp')
 		for (var i = 0, l = nodes.length; i < l; i++) {
-			hljs.highlightBlock(nodes[i])
+			if (/(^|\s)lang-/.test(nodes[i].className)) {
+				hljs.highlightBlock(nodes[i])
+			}
 		}
 	</script>
 </body>
