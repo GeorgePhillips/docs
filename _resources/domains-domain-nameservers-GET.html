@@ -4,7 +4,19 @@ permalink: /GET/domains/:domain/nameservers/
 
 method: GET
 resource: /domains/:domain/nameservers
-summary: Ordered list of all of the domain's nameservers.
+summary: List of all of the domain's nameservers.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% include request.html %}
+
+
+{% capture response %}
+[
+  "ns1.iwantmyname.net",
+  "ns2.iwantmyname.net",
+  "ns3.iwantmyname.net",
+  "ns4.iwantmyname.net"
+}
+{% endcapture %}
+
+{% include response.html response=response %}
