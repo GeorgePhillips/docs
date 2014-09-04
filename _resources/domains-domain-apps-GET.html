@@ -7,4 +7,22 @@ resource: /domains/:domain/apps
 summary: List all apps and services installed to the domain.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% include request.html %}
+
+
+{% capture response %}
+[
+  {
+    "app": "tumblr",
+    "name": "Tumblr",
+    "description": ...
+  },
+  {
+    "app": "github-pages",
+    "name": "GitHub Pages",
+    "description": ...
+  }
+]
+{% endcapture %}
+
+{% include response.html response=response %}

@@ -7,4 +7,24 @@ resource: /apps
 summary: List all available apps and services.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% include request.html %}
+
+
+{% capture response %}
+[
+  {
+    "app": "tumblr",
+    "name": "Tumblr",
+    "description": ...,
+    "records": [...]
+  },
+  {
+    "app": "github-pages",
+    "name": "GitHub Pages",
+    "description": ...,
+    "records": [...]
+  }
+]
+{% endcapture %}
+
+{% include response.html response=response %}

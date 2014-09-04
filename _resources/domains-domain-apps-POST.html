@@ -7,4 +7,21 @@ resource: /domains/:domain/apps
 summary: Install an app or service to the domain by adding necessary DNS records and, for some apps, web forwarding.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% capture payload %}
+{
+  "app": "tumblr"
+}
+{% endcapture %}
+
+{% include request.html payload=payload %}
+
+
+{% capture response %}
+{
+  "app": "tumblr",
+  "name": "Tumblr",
+  "description": ...
+}
+{% endcapture %}
+
+{% include response.html status=201 response=response %}
