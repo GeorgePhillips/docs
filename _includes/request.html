@@ -1,11 +1,8 @@
-{% capture http %}
+{% capture headers %}
 {{ page.method }} {{ page.resource }} HTTP/1.1
 Host: {{ site.endpoint }}
 Accept: application/json{% if include.payload %}
-Content-Type: application/json
-
-{{ include.payload | trim }}
-{% endif %}
+Content-Type: application/json{% endif %}
 {% endcapture %}
 
 {% capture curl %}
@@ -26,18 +23,14 @@ curl -X {{ page.method }} \{% if include.payload %}
 		</ul>
 		<div class="tab-content">
 			<div class="tab-pane active" id="http-request">
-				{% if include.http %}
-					<samp class="lang-http">{{ include.http | trim }}</samp>
-				{% else %}
-					<samp class="lang-http">{{ http | trim }}</samp>
+				<samp class="lang-http">{{ headers | trim }}</samp>
+				{% if include.payload %}
+				<hr>
+				<samp class="lang-json">{{ include.payload | trim }}</samp>
 				{% endif %}
 			</div>
 			<div class="tab-pane" id="curl-request">
-				{% if include.curl %}
-					<samp class="lang-bash">{{ include.curl | trim }}</samp>
-				{% else %}
-					<samp class="lang-bash">{{ curl | trim }}</samp>
-				{% endif %}
+				<samp class="lang-bash">{{ curl | trim }}</samp>
 			</div>
 		</div>
 	</div>

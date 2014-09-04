@@ -3,11 +3,9 @@
 	{% assign status = 200 %}
 {% endunless %}
 
-{% capture response %}
+{% capture headers %}
 HTTP/1.1 {{ status }} {{ site.data.statuses[status] }}{% if include.response %}
-Content-Type: application/json
-
-{{ include.response | trim }}{% endif %}
+Content-Type: application/json{% endif %}
 {% endcapture %}
 
 <div class="panel panel-default">
@@ -15,6 +13,10 @@ Content-Type: application/json
 		<h3 class="panel-title">Response</h3>
 	</div>
 	<div class="panel-body">
-		<samp class="lang-http">{{ response | trim }}</samp>
+		<samp class="lang-http">{{ headers | trim }}</samp>
+		{% if include.response %}
+		<hr>
+		<samp class="lang-json">{{ include.response | trim }}</samp>
+		{% endif %}
 	</div>
 </div>
