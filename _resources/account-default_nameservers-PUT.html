@@ -7,4 +7,15 @@ resource: /account/default_nameservers
 summary: Replace default nameservers with a new ordered list of nameservers.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% capture payload %}
+[
+  "ns1.wordpress.com",
+  "ns2.wordpress.com",
+  "ns3.wordpress.com"
+]
+{% endcapture %}
+
+{% include request.html payload=payload %}
+
+
+{% include response.html response=payload %}

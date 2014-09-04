@@ -7,4 +7,16 @@ resource: /account
 summary: Get all details related to your iwantmyname account.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% include request.html %}
+
+
+{% capture response %}
+{
+  "username": "j.smith@example.com",
+
+  <a href="./default_contact/">"default_contact": {...}</a>,
+  <a href="./default_nameservers">"default_nameservers": [...]</a>
+}
+{% endcapture %}
+
+{% include response.html response=response %}

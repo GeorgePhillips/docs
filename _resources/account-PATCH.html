@@ -7,4 +7,22 @@ resource: /account
 summary: Update specific details for your account.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% capture payload %}
+{
+  "username": "john-smith@example.com"
+}
+{% endcapture %}
+
+{% include request.html payload=payload %}
+
+
+{% capture response %}
+{
+  "username": "john-smith@example.com",
+
+  <a href="./default_contact/">"default_contact": {...}</a>,
+  <a href="./default_nameservers">"default_nameservers": [...]</a>
+}
+{% endcapture %}
+
+{% include response.html response=response %}

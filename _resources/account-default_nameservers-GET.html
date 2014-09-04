@@ -7,4 +7,16 @@ resource: /account/default_nameservers
 summary: Ordered list of default nameservers used for new domain registrations.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% include request.html %}
+
+
+{% capture response %}
+[
+  "ns1.iwantmyname.net",
+  "ns2.iwantmyname.net",
+  "ns3.iwantmyname.net",
+  "ns4.iwantmyname.net"
+]
+{% endcapture %}
+
+{% include response.html response=response %}

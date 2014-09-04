@@ -7,4 +7,30 @@ resource: /account/default_contact
 summary: Update specific information for your default contact.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% capture payload %}
+{
+  "company": "MetaCortex"
+}
+{% endcapture %}
+
+{% include request.html payload=payload %}
+
+
+{% capture response %}
+{
+  "first_name": "John",
+  "last_name": "Smith",
+  "company": "MetaCortex",
+
+  "country": "US",
+  "street": "1234 Main St. Apt #3",
+  "city": "Beverly Hills",
+  "state": "CA",
+  "postcode": "90210",
+
+  "phone": "+1.8005554321",
+  "email": "j.smith@example.com"
+}
+{% endcapture %}
+
+{% include response.html response=response %}
