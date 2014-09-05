@@ -7,4 +7,27 @@ resource: /account/receipts/:id
 summary: Get all information associated with a specific receipt on your account.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% include request.html %}
+
+
+{% capture response %}
+{
+  "id": "23F442823DD5C19134E297349951B",
+  "currency": "USD",
+  "subtotal": 1490,
+  "total": 1490,
+  "items": [
+    {
+      "product": "domain",
+      "type": "register",
+      "domain": "example.com",
+      "domain_utf8": "example.com",
+      "quantity": 1,
+      "amount": 1490
+    }
+  ],
+  "download_url": "{{ site.endpoint }}{{ page.resource }}/23F442823DD5C19134E297349951B/download"
+}
+{% endcapture %}
+
+{% include response.html response=response %}

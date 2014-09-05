@@ -3,9 +3,14 @@
 	{% assign status = 200 %}
 {% endunless %}
 
+{% assign content_type = include.content_type %}
+{% if content_type == nil && include.response %}
+	{% assign content_type = 'application/json' %}
+{% endif %}
+
 {% capture headers %}
-HTTP/1.1 {{ status }} {{ site.data.statuses[status] }}{% if include.response %}
-Content-Type: application/json{% endif %}
+HTTP/1.1 {{ status }} {{ site.data.statuses[status] }}{% if content_type %}
+Content-Type: {{ content_type }}{% endif %}
 {% endcapture %}
 
 <div class="panel panel-default">

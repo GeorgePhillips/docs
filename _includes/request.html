@@ -1,7 +1,7 @@
 {% capture headers %}
 {{ page.method }} {{ page.resource }} HTTP/1.1
 Host: {{ site.endpoint }}
-Accept: application/json{% if include.payload %}
+Accept: {% if include.accept %}{{ include.accept }}{% else %}application/json{% endif %}{% if include.payload %}
 Content-Type: application/json{% endif %}
 {% endcapture %}
 

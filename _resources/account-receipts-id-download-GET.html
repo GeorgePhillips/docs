@@ -7,4 +7,6 @@ resource: /account/receipts/:id/download
 summary: Download a PDF of the receipt.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% include request.html accept='*/*' %}
+
+{% include response.html content_type='application/pdf' %}
