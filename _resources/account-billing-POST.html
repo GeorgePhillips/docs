@@ -7,4 +7,28 @@ resource: /account/billing
 summary: Replace your account's current billing details with new billing details. This will trigger a small authorization charge to validate your new billing details. This authorization charge will be automatically refunded.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% capture payload %}
+{
+  "number": "4444111144441111",
+  "name": "Mary Smith",
+  "exp_month": 1,
+  "exp_year": 2038,
+  "security_code": "123"
+}
+{% endcapture %}
+
+{% include request.html payload=payload %}
+
+
+{% capture response %}
+{
+  "id": "AE386F356E82BBCAF66161B456BEE",
+  "fingerprint": "43B593FCEE71FF86EC1EB8AEBA68D",
+  "last4": "1111",
+  "name": "Mary Smith",
+  "exp_month": 1,
+  "exp_year": 2038
+}
+{% endcapture %}
+
+{% include response.html status=201 response=response %}
