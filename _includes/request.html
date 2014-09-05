@@ -1,5 +1,9 @@
+{% if include.query %}
+  {% assign query = include.query | prepend:'?' %}
+{% endif %}
+
 {% capture headers %}
-{{ page.method }} {{ page.resource }} HTTP/1.1
+{{ page.method }} {{ page.resource }}{{ query }} HTTP/1.1
 Host: {{ site.endpoint }}
 Accept: {% if include.accept %}{{ include.accept }}{% else %}application/json{% endif %}{% if include.payload %}
 Content-Type: application/json{% endif %}
@@ -9,7 +13,7 @@ Content-Type: application/json{% endif %}
 curl -X {{ page.method }} \{% if include.payload %}
   -H 'Content-Type: application/json' \
   -d '<span class="text-nowrap">{{ include.payload | strip_newlines | replace: "'", "\'" }}</span>' \{% endif %}
-  {{ site.endpoint }}{{ page.resource }}
+  {{ site.endpoint }}{{ page.resource }}{{ query }}
 {% endcapture %}
 
 <div class="panel panel-default">

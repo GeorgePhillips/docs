@@ -7,4 +7,36 @@ resource: /search
 summary: List domain availability, price, and any TLD-specific requirements for your domain search query.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% include request.html query='q=Acme+Inc.' %}
+
+
+{% capture response %}
+[
+  {
+    "domain": "acmeinc.com",
+    "domain_utf8": "acmeinc.com",
+    "available": false,
+    "price": {
+      "USD": 1490
+    }
+  },
+  {
+    "domain": "acmeinc.net",
+    "domain_utf8": "acmeinc.net",
+    "available": false,
+    "price": {
+      "USD": 1490
+    }
+  },
+  {
+    "domain": "acmeinc.co.nz",
+    "domain_utf8": "acmeinc.co.nz",
+    "available": true,
+    "price": {
+      "USD": 1900
+    }
+  }
+]
+{% endcapture %}
+
+{% include response.html response=response %}

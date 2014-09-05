@@ -7,4 +7,39 @@ resource: /tlds
 summary: List of our supported TLDs, registration price, and any TLD-specific notes or registration requirements.
 ---
 
-<em class="text-muted">Not yet documented.</em>
+{% include request.html %}
+
+
+{% capture response %}
+[
+  {
+    "tld": "com",
+    "tld_utf8": "com",
+
+    "description": ...,
+    "image_url": ...,
+
+    "can_transfer_lock": true,
+    "can_mask_contacts": true,
+
+    "price": {
+      "USD": {
+        "register": 1490,
+        "renew": 1490,
+        "transfer": 1000,
+        "restore": 6000
+      }
+    }
+  },
+  {
+    "tld": "net",
+    ...
+  },
+  {
+    "tld": "co.nz",
+    ...
+  }
+]
+{% endcapture %}
+
+{% include response.html response=response %}
