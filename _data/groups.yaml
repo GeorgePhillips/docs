@@ -72,3 +72,4 @@
   - /GET/tlds/
   - /GET/tlds/:tld/
   - /GET/search/
+  - /GET/check/:domain/

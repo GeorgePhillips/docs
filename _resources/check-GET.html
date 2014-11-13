@@ -1,0 +1,36 @@
+---
+layout: resource
+permalink: /GET/check/:domain/
+
+method: GET
+resource: /check/:domain
+summary: Check domain availability, price, and any TLD-specific requirements.
+---
+
+{% include request.html %}
+
+
+{% capture response %}
+{
+  "domain": "acmeinc.com",
+  "domain_utf8": "acmeinc.com",
+  "available": false,
+  "price": {
+    "USD": 1490,
+    "EUR": 1490,
+    "NZD": 1790
+  },
+  "caveats": [
+    {
+      "type": "claim",
+      "reason": "This domain has a trademark claim."
+    },
+    {
+      "type": "premium",
+      "reason": "This is a premium domain reserved by the registry."
+    }
+  ]
+}
+{% endcapture %}
+
+{% include response.html response=response %}
