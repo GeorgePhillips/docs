@@ -4,7 +4,7 @@ permalink: /GET/search/
 
 method: GET
 resource: /search
-summary: List domain availability, price, and any TLD-specific requirements for your domain search query.
+summary: Generate personalized results for your domain search query.
 ---
 
 {% include request.html query='q=Acme+Inc.' %}
@@ -14,27 +14,19 @@ summary: List domain availability, price, and any TLD-specific requirements for 
 [
   {
     "domain": "acmeinc.com",
-    "domain_utf8": "acmeinc.com",
-    "available": false,
-    "price": {
-      "USD": 1490
-    }
+    "domain_utf8": "acmeinc.com"
   },
   {
     "domain": "acmeinc.net",
-    "domain_utf8": "acmeinc.net",
-    "available": false,
-    "price": {
-      "USD": 1490
-    }
+    "domain_utf8": "acmeinc.net"
   },
   {
-    "domain": "acmeinc.co.nz",
-    "domain_utf8": "acmeinc.co.nz",
-    "available": true,
-    "price": {
-      "USD": 1900
-    }
+    "domain": "acmeinc.co",
+    "domain_utf8": "acmeinc.co"
+  },
+  {
+    "domain": "acmeinc.io",
+    "domain_utf8": "acmeinc.io"
   }
 ]
 {% endcapture %}
