@@ -1,10 +1,10 @@
 ---
 layout: resource
 draft: yes
-permalink: /GET/tlds/:tld/
+permalink: /GET/products/:id/
 
 method: GET
-resource: /tlds/:tld
+resource: /products/:id
 summary: Show TLD-specific registration information.
 ---
 
@@ -13,6 +13,9 @@ summary: Show TLD-specific registration information.
 
 {% capture response %}
 {
+  "id": "com",
+  "type": "tld",
+
   "tld": "com",
   "tld_utf8": "com",
 

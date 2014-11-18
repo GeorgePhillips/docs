@@ -1,19 +1,22 @@
 ---
 layout: resource
 draft: yes
-permalink: /GET/tlds/
+permalink: /GET/products/
 
 method: GET
-resource: /tlds
+resource: /products
 summary: List of our supported TLDs, registration price, and any TLD-specific notes or registration requirements.
 ---
 
-{% include request.html %}
+{% include request.html query='type=tld' %}
 
 
 {% capture response %}
 [
   {
+    "id": "com",
+    "type": "tld",
+
     "tld": "com",
     "tld_utf8": "com",
 
@@ -33,10 +36,14 @@ summary: List of our supported TLDs, registration price, and any TLD-specific no
     }
   },
   {
+    "id": "net",
+    "type": "tld",
     "tld": "net",
     ...
   },
   {
+    "id": "co.nz",
+    "type": "tld",
     "tld": "co.nz",
     ...
   }

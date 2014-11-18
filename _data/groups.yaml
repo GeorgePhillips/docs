@@ -69,7 +69,7 @@
 - name: Domain Search
   summary: gTLD and ccTLD availability and special requirements.
   resources:
-  - /GET/tlds/
-  - /GET/tlds/:tld/
+  - /GET/products/
+  - /GET/products/:id/
   - /GET/search/
   - /GET/check/:domain/
