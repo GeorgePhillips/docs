@@ -73,5 +73,5 @@
   - /GET/products/:product/
   - /GET/tlds/
   - /GET/tlds/:tld/
-  - /GET/search/
-  - /GET/check/:domain/
+  - /GET/search/results/
+  - /GET/search/results/:domain/
