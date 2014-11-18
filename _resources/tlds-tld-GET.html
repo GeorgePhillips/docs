@@ -1,0 +1,29 @@
+---
+layout: resource
+draft: yes
+permalink: /GET/tlds/:tld/
+
+method: GET
+resource: /tlds/:tld
+summary: Show TLD-specific registration information.
+---
+
+{% include request.html %}
+
+
+{% capture response %}
+{
+  "tld": "com",
+  "tld_utf8": "com",
+
+  "description": ...,
+  "image_url": ...,
+
+  "can_transfer_lock": true,
+  "can_mask_contacts": true,
+
+  "product_url": "{{ site.endpoint }}/products/com"
+}
+{% endcapture %}
+
+{% include response.html response=response %}

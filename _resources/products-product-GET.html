@@ -1,11 +1,11 @@
 ---
 layout: resource
 draft: yes
-permalink: /GET/products/:id/
+permalink: /GET/products/:product/
 
 method: GET
-resource: /products/:id
-summary: Show TLD-specific registration information.
+resource: /products/:product
+summary: Show a specific product and its prices by currency.
 ---
 
 {% include request.html %}
@@ -13,17 +13,9 @@ summary: Show TLD-specific registration information.
 
 {% capture response %}
 {
-  "id": "com",
+  "product": "com",
   "type": "tld",
-
-  "tld": "com",
-  "tld_utf8": "com",
-
-  "description": ...,
-  "image_url": ...,
-
-  "can_transfer_lock": true,
-  "can_mask_contacts": true,
+  "tld_url": "{{ site.endpoint }}/tlds/com"
 
   "price": {
     "USD": {

@@ -5,26 +5,18 @@ permalink: /GET/products/
 
 method: GET
 resource: /products
-summary: List of our supported TLDs, registration price, and any TLD-specific notes or registration requirements.
+summary: List of our products and their prices by currency.
 ---
 
-{% include request.html query='type=tld' %}
+{% include request.html %}
 
 
 {% capture response %}
 [
   {
-    "id": "com",
+    "product": "com",
     "type": "tld",
-
-    "tld": "com",
-    "tld_utf8": "com",
-
-    "description": ...,
-    "image_url": ...,
-
-    "can_transfer_lock": true,
-    "can_mask_contacts": true,
+    "tld_url": "{{ site.endpoint }}/tlds/com"
 
     "price": {
       "USD": {
@@ -36,15 +28,15 @@ summary: List of our supported TLDs, registration price, and any TLD-specific no
     }
   },
   {
-    "id": "net",
+    "product": "net",
     "type": "tld",
-    "tld": "net",
+    "tld_url": "{{ site.endpoint }}/tlds/net"
     ...
   },
   {
-    "id": "co.nz",
+    "product": "co.nz",
     "type": "tld",
-    "tld": "co.nz",
+    "tld_url": "{{ site.endpoint }}/tlds/co.nz"
     ...
   }
 ]

@@ -70,6 +70,8 @@
   summary: gTLD and ccTLD availability and special requirements.
   resources:
   - /GET/products/
-  - /GET/products/:id/
+  - /GET/products/:product/
+  - /GET/tlds/
+  - /GET/tlds/:tld/
   - /GET/search/
   - /GET/check/:domain/

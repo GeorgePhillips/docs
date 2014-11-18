@@ -1,0 +1,39 @@
+---
+layout: resource
+draft: yes
+permalink: /GET/tlds/
+
+method: GET
+resource: /tlds
+summary: List of our supported TLDs and any TLD-specific notes or registration requirements.
+---
+
+{% include request.html %}
+
+
+{% capture response %}
+[
+  {
+    "tld": "com",
+    "tld_utf8": "com",
+
+    "description": ...,
+    "image_url": ...,
+
+    "can_transfer_lock": true,
+    "can_mask_contacts": true,
+
+    "product_url": "https://{{ site.endpoint }}/products/com"
+  },
+  {
+    "tld": "net",
+    ...
+  },
+  {
+    "tld": "co.nz",
+    ...
+  }
+]
+{% endcapture %}
+
+{% include response.html response=response %}
