@@ -1,0 +1,13 @@
+---
+layout: resource
+draft: yes
+permalink: /DELETE/domains/:domain/apps/:app/
+
+method: DELETE
+resource: /domains/:domain/apps/:app
+summary: Remove all DNS records related to an app installed to the domain.
+---
+
+{% include request.html %}
+
+{% include response.html status=204 %}
