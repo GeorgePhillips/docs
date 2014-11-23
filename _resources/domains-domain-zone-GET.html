@@ -8,7 +8,7 @@ resource: /domains/:domain/zone
 summary: Show the domain's DNS record as a BIND-compatible zone file.
 ---
 
-{% include request.html %}
+{% include request.html accept='text/plain' %}
 
 
 {% capture response %}

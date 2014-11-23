@@ -8,7 +8,7 @@ resource: /domains/:domain/zone
 summary: Replace the domain's DNS records using a BIND-compatible zone file.
 ---
 
-{% capture request %}
+{% capture payload %}
 $ORIGIN example.com.     ; designates the start of this zone file in the namespace
 $TTL 1h                  ; default expiration time of all resource records without their own TTL value
 example.com.  IN  SOA   ns.example.com. username.example.com. ( 2007120710 1d 2h 4w 1h )
@@ -28,7 +28,7 @@ mail2         IN  A     192.0.2.4             ; IPv4 address for mail2.example.c
 mail3         IN  A     192.0.2.5             ; IPv4 address for mail3.example.com
 {% endcapture %}
 
-{% include request.html request=request content_type='text/plain' %}
+{% include request.html payload=payload content_type='text/plain' accept='text/plain' %}
 
 
 {% capture response %}
