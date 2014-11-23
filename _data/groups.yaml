@@ -46,7 +46,7 @@
   - /GET/apps/
   - /GET/domains/:domain/apps/
   - /POST/domains/:domain/apps/
-  - /DELETE/domains/:domain/apps/:app/
+  - /DELETE/domains/:domain/apps/:id/
 
 - name: Account
   summary: Manage your account profile and settings.
