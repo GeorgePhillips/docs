@@ -8,6 +8,14 @@
 	{% assign content_type = 'application/json' %}
 {% endif %}
 
+{% assign lang = include.lang %}
+{% if lang == nil %}
+	{% case content_type %}
+	{% when 'application/json' %}
+		{% assign lang = 'json' %}
+	{% endcase %}
+{% endif %}
+
 {% capture headers %}
 HTTP/1.1 {{ status }} {{ site.data.statuses[status] }}{% if content_type %}
 Content-Type: {{ content_type }}{% endif %}
@@ -21,7 +29,7 @@ Content-Type: {{ content_type }}{% endif %}
 		<samp class="lang-http">{{ headers | trim }}</samp>
 		{% if include.response %}
 		<hr>
-		<samp class="lang-json">{{ include.response | trim }}</samp>
+		<samp{% if lang %} class="lang-{{ lang }}"{% endif %}>{{ include.response | trim }}</samp>
 		{% endif %}
 	</div>
 </div>

@@ -7,6 +7,14 @@
 	{% assign content_type = 'application/json' %}
 {% endif %}
 
+{% assign lang = include.lang %}
+{% if lang == nil %}
+	{% case content_type %}
+	{% when 'application/json' %}
+		{% assign lang = 'json' %}
+	{% endcase %}
+{% endif %}
+
 {% capture headers %}
 {{ page.method }} {{ page.resource }}{{ query }} HTTP/1.1
 Host: {{ site.endpoint }}
@@ -35,7 +43,7 @@ curl -X {{ page.method }} \{% if include.payload %}
 				<samp class="lang-http">{{ headers | trim }}</samp>
 				{% if include.payload %}
 				<hr>
-				<samp class="lang-json">{{ include.payload | trim }}</samp>
+				<samp{% if lang %} class="lang-{{ lang }}"{% endif %}>{{ include.payload | trim }}</samp>
 				{% endif %}
 			</div>
 			<div class="tab-pane" id="curl-request">
