@@ -2,16 +2,21 @@
   {% assign query = include.query | prepend:'?' %}
 {% endif %}
 
+{% assign content_type = include.content_type %}
+{% if content_type == nil && include.response %}
+	{% assign content_type = 'application/json' %}
+{% endif %}
+
 {% capture headers %}
 {{ page.method }} {{ page.resource }}{{ query }} HTTP/1.1
 Host: {{ site.endpoint }}
 Accept: {% if include.accept %}{{ include.accept }}{% else %}application/json{% endif %}{% if include.payload %}
-Content-Type: application/json{% endif %}
+Content-Type: {{ content_type }}{% endif %}
 {% endcapture %}
 
 {% capture curl %}
 curl -X {{ page.method }} \{% if include.payload %}
-  -H 'Content-Type: application/json' \
+  -H 'Content-Type: {{ content_type }}' \
   -d '<span class="text-nowrap">{{ include.payload | strip_newlines | replace: "'", "\'" }}</span>' \{% endif %}
   {{ site.endpoint }}{{ page.resource }}{{ query }}
 {% endcapture %}

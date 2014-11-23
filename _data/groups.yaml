@@ -35,6 +35,8 @@
   - /POST/domains/:domain/records/
   - /PUT/domains/:domain/records/
   - /DELETE/domains/:domain/records/:id/
+  - /GET/domains/:domain/zone/
+  - /PUT/domains/:domain/zone/
 
 - name: Apps & Services
   summary: |
