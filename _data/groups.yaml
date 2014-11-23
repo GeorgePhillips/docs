@@ -65,7 +65,7 @@
   - /DELETE/account/billing/:id/
   - /GET/account/receipts/
   - /GET/account/receipts/:id/
-  - /GET/account/receipts/:id/download/
+  - /GET/account/receipts/:id.pdf/
 
 - name: Domain Search
   summary: gTLD and ccTLD availability and special requirements.

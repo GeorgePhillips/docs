@@ -1,13 +1,13 @@
 ---
 layout: resource
 draft: yes
-permalink: /GET/account/receipts/:id/download/
+permalink: /GET/account/receipts/:id.pdf/
 
 method: GET
-resource: /account/receipts/:id/download
+resource: /account/receipts/:id.pdf
 summary: Download a PDF of the receipt.
 ---
 
-{% include request.html accept='*/*' %}
+{% include request.html accept='application/pdf' %}
 
 {% include response.html content_type='application/pdf' %}
