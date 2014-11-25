@@ -1,0 +1,23 @@
+---
+layout: resource
+draft: yes
+permalink: /GET/apps/:app/
+
+method: GET
+resource: /apps/:app
+summary: Show details related to the app or service including a description and DNS records to be added.
+---
+
+{% include request.html %}
+
+
+{% capture response %}
+{
+  "app": "tumblr",
+  "name": "Tumblr",
+  "description": ...,
+  "records": [...]
+}
+{% endcapture %}
+
+{% include response.html response=response %}

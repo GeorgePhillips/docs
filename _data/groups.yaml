@@ -44,6 +44,7 @@
     as mentioned above, applies here too.
   resources:
   - /GET/apps/
+  - /GET/apps/:app/
   - /GET/domains/:domain/apps/
   - /POST/domains/:domain/apps/
   - /DELETE/domains/:domain/apps/:id/
