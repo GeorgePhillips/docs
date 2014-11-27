@@ -11,7 +11,7 @@ layout: base
 				<a href="{{ site.baseurl }}/" class="dropdown-toggle" data-toggle="dropdown">Docs <b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					{% for group in site.data.groups %}
-						<li><a href="{{ site.baseurl }}/#{{ group.name }}">{{ group.name }}</a></li>
+						<li><a href="{{ site.baseurl }}/#{{ group.name | slugify }}">{{ group.name }}</a></li>
 					{% endfor %}
 				</ul>
 			</li>
