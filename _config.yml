@@ -1,4 +1,5 @@
-endpoint: https://api.iwantmyname.com/v1
+endpoint: https://api.iwantmyname.com
+version: v1
 
 baseurl: "/docs"
 
