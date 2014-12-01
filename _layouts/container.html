@@ -18,7 +18,7 @@ layout: base
 		</ul>
 		<p class="navbar-text navbar-right">
 			{% if page.resource %}
-				{{ page.method }} /{{ site.version }}{{ page.resource }}
+				{{ page.method }} {{ page.resource }}
 			{% else %}
 				Manage your domain names and DNS records programmatically with our RESTful API.
 			{% endif %}
