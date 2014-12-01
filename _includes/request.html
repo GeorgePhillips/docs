@@ -16,7 +16,7 @@
 {% endif %}
 
 {% capture headers %}
-{{ page.method }} /{{ site.version }}{{ page.resource }}{{ query }} HTTP/1.1
+{{ page.method }} /{{ site.version }}/{{ page.resource }}{{ query }} HTTP/1.1
 Host: {{ site.endpoint }}
 Accept: {% if include.accept %}{{ include.accept }}{% else %}application/json{% endif %}{% if include.payload %}
 Content-Type: {{ content_type }}{% endif %}
@@ -26,7 +26,7 @@ Content-Type: {{ content_type }}{% endif %}
 curl -X {{ page.method }} \{% if include.payload %}
   -H 'Content-Type: {{ content_type }}' \
   -d '<span class="text-nowrap">{{ include.payload | strip_newlines | replace: "'", "\'" }}</span>' \{% endif %}
-  {{ site.endpoint }}/{{ site.version }}{{ page.resource }}{{ query }}
+  {{ site.endpoint }}/{{ site.version }}/{{ page.resource }}{{ query }}
 {% endcapture %}
 
 <div class="panel panel-default">
