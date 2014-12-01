@@ -29,6 +29,16 @@ curl -X {{ page.method }} \{% if include.payload %}
   {{ site.endpoint }}/{{ site.version }}/{{ page.resource }}{{ query }}
 {% endcapture %}
 
+{% capture callback %}function (err, data) {
+  // ...
+}{% endcapture %}
+
+{% capture js %}
+var iwmn = new <a href="https://github.com/iwantmyname/iwmn-js">IWMN</a>('your API token here')
+
+iwmn.{{ site.data.javascript[page.url] | replace: "callback", callback }}
+{% endcapture %}
+
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<h3 class="panel-title">Request</h3>
@@ -37,6 +47,7 @@ curl -X {{ page.method }} \{% if include.payload %}
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#http-request" data-toggle="tab">HTTP</a></li>
 			<li><a href="#curl-request" data-toggle="tab">cURL</a></li>
+			<li><a href="#js-request" data-toggle="tab">JavaScript</a></li>
 		</ul>
 		<div class="tab-content">
 			<div class="tab-pane active" id="http-request">
@@ -48,6 +59,9 @@ curl -X {{ page.method }} \{% if include.payload %}
 			</div>
 			<div class="tab-pane" id="curl-request">
 				<samp class="lang-bash">{{ curl | trim }}</samp>
+			</div>
+			<div class="tab-pane" id="js-request">
+				<samp class="lang-js">{{ js | trim }}</samp>
 			</div>
 		</div>
 	</div>
