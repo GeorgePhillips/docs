@@ -1,6 +1,6 @@
 ---
 layout: resource
-permalink: /PUT/domains/:domain/contacts/
+permalink: /PUT/domains/domain/contacts/
 
 method: PUT
 resource: domains/:domain/contacts
@@ -9,10 +9,10 @@ summary: Replace contact information for all contact types at the same time.
 
 {% capture payload %}
 {
-  <a href="./:type/">"owner": {...}</a>,
-  <a href="./:type/">"admin": {...}</a>,
-  <a href="./:type/">"tech": {...}</a>,
-  <a href="./:type/">"billing": {...}</a>
+  <a href="./type/">"owner": {...}</a>,
+  <a href="./type/">"admin": {...}</a>,
+  <a href="./type/">"tech": {...}</a>,
+  <a href="./type/">"billing": {...}</a>
 }
 {% endcapture %}
 

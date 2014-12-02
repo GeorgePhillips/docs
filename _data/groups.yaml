@@ -2,27 +2,27 @@
   summary: Interact with domain names managed by your account.
   resources:
   - /GET/domains/
-  - /GET/domains/:domain/
-  - /PATCH/domains/:domain/
-  - /GET/domains/:domain/nameservers/
-  - /PUT/domains/:domain/nameservers/
-  - /GET/domains/:domain/pending/
+  - /GET/domains/domain/
+  - /PATCH/domains/domain/
+  - /GET/domains/domain/nameservers/
+  - /PUT/domains/domain/nameservers/
+  - /GET/domains/domain/pending/
 
 - name: Domain Transfers
   summary: Manage your incoming and outgoing domain transfers.
   resources:
   - /GET/transfers/
-  - /PUT/transfers/:domain/
+  - /PUT/transfers/domain/
 
 - name: Domain Contacts
   summary: Manage contact information associated with a domain name.
   resources:
-  - /GET/domains/:domain/contacts/
-  - /PUT/domains/:domain/contacts/
-  - /PATCH/domains/:domain/contacts/
-  - /GET/domains/:domain/contacts/:type/
-  - /PUT/domains/:domain/contacts/:type/
-  - /PATCH/domains/:domain/contacts/:type/
+  - /GET/domains/domain/contacts/
+  - /PUT/domains/domain/contacts/
+  - /PATCH/domains/domain/contacts/
+  - /GET/domains/domain/contacts/type/
+  - /PUT/domains/domain/contacts/type/
+  - /PATCH/domains/domain/contacts/type/
 
 - name: DNS Records
   summary: |
@@ -31,12 +31,12 @@
     will be applied immediately, but may not be immediately active due to DNS
     propagation. Please allow a few hours for the changes to take effect.
   resources:
-  - /GET/domains/:domain/records/
-  - /POST/domains/:domain/records/
-  - /PUT/domains/:domain/records/
-  - /DELETE/domains/:domain/records/:id/
-  - /GET/domains/:domain/zone/
-  - /PUT/domains/:domain/zone/
+  - /GET/domains/domain/records/
+  - /POST/domains/domain/records/
+  - /PUT/domains/domain/records/
+  - /DELETE/domains/domain/records/id/
+  - /GET/domains/domain/zone/
+  - /PUT/domains/domain/zone/
 
 - name: Apps & Services
   summary: |
@@ -44,10 +44,10 @@
     as mentioned above, applies here too.
   resources:
   - /GET/apps/
-  - /GET/apps/:app/
-  - /GET/domains/:domain/apps/
-  - /POST/domains/:domain/apps/
-  - /DELETE/domains/:domain/apps/:id/
+  - /GET/apps/app/
+  - /GET/domains/domain/apps/
+  - /POST/domains/domain/apps/
+  - /DELETE/domains/domain/apps/id/
 
 - name: Account
   summary: Manage your account profile and settings.
@@ -65,17 +65,17 @@
   resources:
   - /GET/account/billing/
   - /POST/account/billing/
-  - /DELETE/account/billing/:id/
+  - /DELETE/account/billing/id/
   - /GET/account/receipts/
-  - /GET/account/receipts/:id/
-  - /GET/account/receipts/:id.pdf/
+  - /GET/account/receipts/id/
+  - /GET/account/receipts/id.pdf/
 
 - name: Domain Search
   summary: gTLD and ccTLD availability and special requirements.
   resources:
   - /GET/products/
-  - /GET/products/:product/
+  - /GET/products/product/
   - /GET/tlds/
-  - /GET/tlds/:tld/
+  - /GET/tlds/tld/
   - /GET/search/results/
-  - /GET/search/results/:domain/
+  - /GET/search/results/domain/

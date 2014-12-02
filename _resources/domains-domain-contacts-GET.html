@@ -1,6 +1,6 @@
 ---
 layout: resource
-permalink: /GET/domains/:domain/contacts/
+permalink: /GET/domains/domain/contacts/
 
 method: GET
 resource: domains/:domain/contacts
@@ -12,10 +12,10 @@ summary: List all contacts (owner, admin, tech, billing) associated with the dom
 
 {% capture response %}
 {
-  <a href="./:type/">"owner": {...}</a>,
-  <a href="./:type/">"admin": {...}</a>,
-  <a href="./:type/">"tech": {...}</a>,
-  <a href="./:type/">"billing": {...}</a>
+  <a href="./type/">"owner": {...}</a>,
+  <a href="./type/">"admin": {...}</a>,
+  <a href="./type/">"tech": {...}</a>,
+  <a href="./type/">"billing": {...}</a>
 }
 {% endcapture %}
 
