@@ -1,7 +1,7 @@
 endpoint: https://api.iwantmyname.com
 version: v1
 
-baseurl: "/docs"
+baseurl: /docs
 
 collections:
   resources:

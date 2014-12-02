@@ -30,7 +30,8 @@
 			margin-top: 20px;
 			margin-bottom: 40px;
 		}
-		section[id] {
+		section[id], .page-header {
+			/* adds invisible top padding for jumping to anchors via #links */
 			padding-top: 70px;
 			margin-top: -70px;
 		}
@@ -52,6 +53,13 @@
 			display: block;
 			white-space: pre;
 			overflow-x: auto;
+		}
+
+		.api-discussion-alert {
+			margin-top: -20px;
+			margin-bottom: 10px;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
 		}
 
 		/* enable hover dropdowns */

@@ -7,10 +7,4 @@ layout: container
 	<p class="lead text-muted">{{ page.summary }}</p>
 </div>
 
-{% if page.draft %}
-	<div class="alert alert-warning">
-		<strong>Heads up!</strong> We are still working on this endpoint of the API. Please be aware that this endpoint may be renamed/removed and the request/response expectations changed. Once this endpoint's spec and documentation has been finalized for our eventual API implementation, we will remove this notice.
-	</div>
-{% endif %}
-
 {{ content }}
