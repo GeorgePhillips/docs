@@ -22,11 +22,11 @@
 "/GET/domains/domain/zone/": "domains(domain).zone.get(callback)"
 "/PUT/domains/domain/zone/": "domains(domain).zone.replace(data, callback)"
 
-"/GET/apps/": "apps.list(callback)"
-"/GET/apps/app/": "apps(app).get(callback)"
-"/GET/domains/domain/apps/": "domains(domain).apps.list(callback)"
-"/POST/domains/domain/apps/": "domains(domain).apps.create(data, callback)"
-"/DELETE/domains/domain/apps/id/": "domains(domain).apps(id).del(callback)"
+"/GET/services/": "services.list(callback)"
+"/GET/services/service/": "services(service).get(callback)"
+"/GET/domains/domain/services/": "domains(domain).services.list(callback)"
+"/POST/domains/domain/services/": "domains(domain).services.create(data, callback)"
+"/DELETE/domains/domain/services/id/": "domains(domain).services(id).del(callback)"
 
 "/GET/account/": "account.get(callback)"
 "/PATCH/account/": "account.update(data, callback)"

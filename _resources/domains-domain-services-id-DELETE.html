@@ -1,0 +1,12 @@
+---
+layout: resource
+permalink: /DELETE/domains/domain/services/id/
+
+method: DELETE
+resource: domains/:domain/services/:id
+summary: Remove all DNS records related to a service installed to the domain.
+---
+
+{% include request.html %}
+
+{% include response.html status=204 %}

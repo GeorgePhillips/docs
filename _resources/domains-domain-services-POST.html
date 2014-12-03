@@ -1,15 +1,15 @@
 ---
 layout: resource
-permalink: /POST/domains/domain/apps/
+permalink: /POST/domains/domain/services/
 
 method: POST
-resource: domains/:domain/apps
-summary: Install an app or service to the domain by adding necessary DNS records and, for some apps, web forwarding.
+resource: domains/:domain/services
+summary: Install a service to the domain by adding necessary DNS records and, for some services, web forwarding.
 ---
 
 {% capture payload %}
 {
-  "app": "tumblr"
+  "service": "tumblr"
 }
 {% endcapture %}
 
@@ -19,7 +19,7 @@ summary: Install an app or service to the domain by adding necessary DNS records
 {% capture response %}
 {
   "id": "A951A52B454C7D2919D7F1575987C",
-  "app": "tumblr",
+  "service": "tumblr",
   "name": "Tumblr",
   "description": ...
 }

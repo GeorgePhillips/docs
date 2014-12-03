@@ -1,10 +1,10 @@
 ---
 layout: resource
-permalink: /GET/apps/app/
+permalink: /GET/services/service/
 
 method: GET
-resource: apps/:app
-summary: Show details related to the app or service including a description and DNS records to be added.
+resource: services/:service
+summary: Show details related to the service including a description and DNS records to be added.
 ---
 
 {% include request.html %}
@@ -12,7 +12,7 @@ summary: Show details related to the app or service including a description and 
 
 {% capture response %}
 {
-  "app": "tumblr",
+  "service": "tumblr",
   "name": "Tumblr",
   "description": ...,
   "records": [...]

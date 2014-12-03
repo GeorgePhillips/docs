@@ -1,10 +1,10 @@
 ---
 layout: resource
-permalink: /GET/apps/
+permalink: /GET/services/
 
 method: GET
-resource: apps
-summary: List all available apps and services.
+resource: services
+summary: List all available one-click services.
 ---
 
 {% include request.html %}
@@ -13,13 +13,13 @@ summary: List all available apps and services.
 {% capture response %}
 [
   {
-    "app": "tumblr",
+    "service": "tumblr",
     "name": "Tumblr",
     "description": ...,
     "records": [...]
   },
   {
-    "app": "github-pages",
+    "service": "github-pages",
     "name": "GitHub Pages",
     "description": ...,
     "records": [...]
