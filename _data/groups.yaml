@@ -40,8 +40,9 @@
 
 - name: One-click Services
   summary: |
-    Interact with our one-click services marketplace. DNS propagation,
-    as mentioned above, applies here too.
+    Interact with our one-click services marketplace. Services represent a set
+    of DNS records to be applied to a domain for use with third-party platforms.
+    DNS propagation, as mentioned above, applies here too.
   resources:
   - /GET/services/
   - /GET/services/service/
