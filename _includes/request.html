@@ -29,6 +29,7 @@ curl -X {{ page.method }} \{% if include.payload %}
   {{ site.endpoint }}/{{ site.version }}/{{ page.resource }}{{ query }}
 {% endcapture %}
 
+{% if site.data.javascript[page.url] %}
 {% capture callback %}function (err, data) {
   // ...
 }{% endcapture %}
@@ -38,6 +39,7 @@ var iwmn = new <a href="https://github.com/iwantmyname/iwmn-js">IWMN</a>('your A
 
 iwmn.{{ site.data.javascript[page.url] | replace: "callback", callback }}
 {% endcapture %}
+{% endif %}
 
 <div class="panel panel-default">
 	<div class="panel-heading">
@@ -47,7 +49,9 @@ iwmn.{{ site.data.javascript[page.url] | replace: "callback", callback }}
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#http-request" data-toggle="tab">HTTP</a></li>
 			<li><a href="#curl-request" data-toggle="tab">cURL</a></li>
+			{% if js %}
 			<li><a href="#js-request" data-toggle="tab">JavaScript</a></li>
+			{% endif %}
 		</ul>
 		<div class="tab-content">
 			<div class="tab-pane active" id="http-request">
@@ -60,9 +64,11 @@ iwmn.{{ site.data.javascript[page.url] | replace: "callback", callback }}
 			<div class="tab-pane" id="curl-request">
 				<samp class="lang-bash">{{ curl | trim }}</samp>
 			</div>
+			{% if js %}
 			<div class="tab-pane" id="js-request">
 				<samp class="lang-js">{{ js | trim }}</samp>
 			</div>
+			{% endif %}
 		</div>
 	</div>
 </div>
