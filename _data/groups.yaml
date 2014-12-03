@@ -63,9 +63,9 @@
 - name: Billing & Receipts
   summary: Manage your account's billing information and retrieve receipts.
   resources:
-  - /GET/account/billing/
-  - /POST/account/billing/
-  - /DELETE/account/billing/id/
+  - /GET/account/billing/default/
+  - /PUT/account/billing/default/
+  - /DELETE/account/billing/default/
   - /GET/account/receipts/
   - /GET/account/receipts/id/
   - /GET/account/receipts/id.pdf/

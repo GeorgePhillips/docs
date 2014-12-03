@@ -1,0 +1,22 @@
+---
+layout: resource
+permalink: /GET/account/billing/default/
+
+method: GET
+resource: account/billing/default
+summary: Show the current billing details associated with your account. Your account will need an active set of billing details in order to process domain registrations and renewals.
+---
+
+{% include request.html %}
+
+
+{% capture response %}
+{
+  "last4": "0123",
+  "name": "John Smith",
+  "exp_month": 1,
+  "exp_year": 2038
+}
+{% endcapture %}
+
+{% include response.html response=response %}

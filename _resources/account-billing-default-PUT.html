@@ -1,8 +1,8 @@
 ---
 layout: resource
-permalink: /POST/account/billing/
+permalink: /PUT/account/billing/
 
-method: POST
+method: PUT
 resource: account/billing
 summary: Replace your account's current billing details with new billing details. This will trigger a small authorization charge to validate your new billing details. This authorization charge will be automatically refunded.
 ---
@@ -22,7 +22,6 @@ summary: Replace your account's current billing details with new billing details
 
 {% capture response %}
 {
-  "id": "AE386F356E82BBCAF66161B456BEE",
   "last4": "1111",
   "name": "Mary Smith",
   "exp_month": 1,
