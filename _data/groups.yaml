@@ -38,9 +38,9 @@
   - /GET/domains/domain/zone/
   - /PUT/domains/domain/zone/
 
-- name: Apps & Services
+- name: One-click Services
   summary: |
-    Interact with our apps and services marketplace. DNS propagation,
+    Interact with our one-click services marketplace. DNS propagation,
     as mentioned above, applies here too.
   resources:
   - /GET/services/
