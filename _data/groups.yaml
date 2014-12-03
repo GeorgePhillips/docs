@@ -54,11 +54,11 @@
   resources:
   - /GET/account/
   - /PATCH/account/
-  - /GET/account/default_contact/
-  - /PUT/account/default_contact/
-  - /PATCH/account/default_contact/
-  - /GET/account/default_nameservers/
-  - /PUT/account/default_nameservers/
+  - /GET/account/contacts/default/
+  - /PUT/account/contacts/default/
+  - /PATCH/account/contacts/default/
+  - /GET/account/nameservers/default/
+  - /PUT/account/nameservers/default/
 
 - name: Billing & Receipts
   summary: Manage your account's billing information and retrieve receipts.
