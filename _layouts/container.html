@@ -8,7 +8,18 @@ layout: base
 
 		<ul class="nav navbar-nav">
 			<li class="dropdown">
-				<a href="{{ site.baseurl }}/" class="dropdown-toggle" data-toggle="dropdown">Docs <b class="caret"></b></a>
+				<a href="{{ site.baseurl }}/" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					{% for url in site.data.overview %}
+						{% for doc in site.topics %}
+							{% if url != doc.url %}{% continue %}{% endif %}
+							<li><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a></li>
+						{% endfor %}
+					{% endfor %}
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a href="{{ site.baseurl }}/" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					{% for group in site.data.groups %}
 						<li><a href="{{ site.baseurl }}/#{{ group.name | slugify }}">{{ group.name }}</a></li>
@@ -17,7 +28,9 @@ layout: base
 			</li>
 		</ul>
 		<p class="navbar-text navbar-right">
-			{% if page.resource %}
+			{% if page.title %}
+				{{ page.title }}
+			{% elsif page.resource %}
 				{{ page.method }} {{ page.resource }}
 			{% else %}
 				Manage your domain names and DNS records programmatically with our RESTful API.

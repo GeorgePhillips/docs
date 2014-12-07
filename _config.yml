@@ -6,3 +6,6 @@ baseurl: /docs
 collections:
   resources:
     output: yes
+  topics:
+    output: yes
+    permalink: /:path/

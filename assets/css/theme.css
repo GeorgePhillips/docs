@@ -7,6 +7,14 @@ body {
 footer {
 	height: 75%;
 }
+
+.api-discussion-alert {
+	margin-top: -20px;
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
 .page-header {
 	margin-top: 20px;
 	margin-bottom: 40px;
@@ -16,7 +24,8 @@ section[id], .page-header {
 	padding-top: 70px;
 	margin-top: -70px;
 }
-section table.table {
+section > table,
+section > ul {
 	margin-top: 30px;
 	margin-bottom: 40px;
 }
@@ -34,13 +43,6 @@ section table.table {
 	display: block;
 	white-space: pre;
 	overflow-x: auto;
-}
-
-.api-discussion-alert {
-	margin-top: -20px;
-	margin-bottom: 10px;
-	border-top-left-radius: 0;
-	border-top-right-radius: 0;
 }
 
 /* enable hover dropdowns */
