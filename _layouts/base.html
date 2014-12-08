@@ -22,17 +22,8 @@
 	<a href="https://github.com/iwantmyname/docs"><img style="position: fixed; top: 50px; right: 0; border: 0; width: 149px; height: 149px;" src="https://aral.github.io/fork-me-on-github-retina-ribbons/right-dusk-blue@2x.png" alt="Fork me on GitHub"></a>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
-	<script>
-		var nodes = document.querySelectorAll('samp')
-		for (var i = 0, l = nodes.length; i < l; i++) {
-			var node = nodes[i]
-			node.innerHTML = node.innerHTML.replace(/^\s+|\s+$/g, '')
-			if (/(^|\s)lang-/.test(node.className)) {
-				hljs.highlightBlock(node)
-			}
-		}
-	</script>
+	<script src="{{ site.baseurl }}/assets/js/app.js"></script>
 </body>
 </html>
