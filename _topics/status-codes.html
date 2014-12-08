@@ -3,4 +3,21 @@ layout: topic
 title: Status Codes
 ---
 
-<em class="text-muted">Not yet documented.</em>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Status</th>
+			<th>Summary</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for status in site.data.statuses %}
+			<tr>
+				<td><samp>{{ status[0] }}</samp></td>
+				<td class="text-muted">{{ status[1] }}</td>
+				<td><em class="text-muted">Not yet documented.</em></td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
