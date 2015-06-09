@@ -28,8 +28,12 @@ Content-Type: {{ content_type }}{% endif %}
 	<div class="panel-body">
 		<samp class="lang-http">{{ headers | trim }}</samp>
 		{% if include.response %}
-		<hr>
-		<samp{% if lang %} class="lang-{{ lang }}"{% endif %}>{{ include.response | trim }}</samp>
+			<hr>
+			{% if lang %}
+				<samp class="lang-{{ lang }}">{{ include.response | trim }}</samp>
+			{% else %}
+				<samp>{{ include.response | trim }}</samp>
+			{% endif %}
 		{% endif %}
 	</div>
 </div>

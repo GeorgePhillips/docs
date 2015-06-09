@@ -57,8 +57,12 @@ iwmn.{{ site.data.javascript[page.url] | replace: "callback", callback }}
 			<div class="tab-pane active" id="http-request">
 				<samp class="lang-http">{{ headers | trim }}</samp>
 				{% if include.payload %}
-				<hr>
-				<samp{% if lang %} class="lang-{{ lang }}"{% endif %}>{{ include.payload | trim }}</samp>
+					<hr>
+					{% if lang %}
+						<samp class="lang-{{ lang }}">{{ include.payload | trim }}</samp>
+					{% else %}
+						<samp>{{ include.payload | trim }}</samp>
+					{% endif %}
 				{% endif %}
 			</div>
 			<div class="tab-pane" id="curl-request">
